@@ -1,0 +1,11 @@
+<% @forecast.each do |value| %>
+  <p>
+    City: <%= value[:city] %></br>
+    From: <%= value[:timeFrom].sub(/T/, ' ') %></br>
+    To: <%= value[:timeTo].sub(/T/, ' ') %></br>
+    Temperature: <%= value[:temperature] %></br>
+    Pressure: <%= value[:pressure] %></br>
+    Humidity: <%= value[:humidity] %></br>
+    Wind <%= value[:windDirection] %> <%= value[:windSpeed] %></br>
+  </p>
+<% end %>

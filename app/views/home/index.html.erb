@@ -1,13 +1,4 @@
 <%= link_to 'Download CSV', download_url('csv'), method: :post %>
 <%= link_to 'Download JSON', download_url('json'), method: :post %>
 </br>
-<% @forecast.each do |value| %>
-  <p>
-    From: <%= value[:timeFrom].sub(/T/, ' ') %></br>
-    To: <%= value[:timeTo].sub(/T/, ' ') %></br>
-    Temperature: <%= value[:temperature] %> celsius</br>
-    Pressure: <%= value[:pressure] %> hPa</br>
-    Humidity: <%= value[:humidity] %>%</br>
-    Wind <%= value[:windDirection] %> <%= value[:windSpeed] %> mps</br>
-  </p>
-<% end %>
+<%= render 'forecast' %>
